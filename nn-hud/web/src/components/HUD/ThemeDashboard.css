@@ -1,0 +1,433 @@
+/* Custom Font Import */
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url("https://db.onlinewebfonts.com/t/040a78b437acd0433612f92e61d04a1b.eot");
+  src: url("https://db.onlinewebfonts.com/t/040a78b437acd0433612f92e61d04a1b.eot?#iefix")
+      format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/040a78b437acd0433612f92e61d04a1b.woff2")
+      format("woff2"),
+      url("https://db.onlinewebfonts.com/t/040a78b437acd0433612f92e61d04a1b.woff")
+      format("woff"),
+      url("https://db.onlinewebfonts.com/t/040a78b437acd0433612f92e61d04a1b.ttf")
+      format("truetype"),
+      url("https://db.onlinewebfonts.com/t/040a78b437acd0433612f92e61d04a1b.svg#Gilroy-Medium")
+      format("svg");
+}
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url("https://db.onlinewebfonts.com/t/000833a3a58fb083c44b9de42c2ff0a2.eot");
+  src: url("https://db.onlinewebfonts.com/t/000833a3a58fb083c44b9de42c2ff0a2.eot?#iefix")
+      format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/000833a3a58fb083c44b9de42c2ff0a2.woff2")
+      format("woff2"),
+      url("https://db.onlinewebfonts.com/t/000833a3a58fb083c44b9de42c2ff0a2.woff")
+      format("woff"),
+      url("https://db.onlinewebfonts.com/t/000833a3a58fb083c44b9de42c2ff0a2.ttf")
+      format("truetype"),
+      url("https://db.onlinewebfonts.com/t/000833a3a58fb083c44b9de42c2ff0a2.svg#Gilroy-SemiBold")
+      format("svg");
+}
+
+/* Theme Dashboard Overlay */
+.theme-dashboard-overlay {
+  position: fixed;
+  top: 4vh;
+  left: 0;
+  right: 4vh;
+  bottom: 0;
+  z-index: 9999;
+  border-radius: 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 2vh;
+}
+
+/* Main Dashboard Container - Black theme with corner borders */
+.theme-dashboard {
+  position: relative;
+  width: 420px;
+  max-height: 85vh;
+  border-radius: 12px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  transform: perspective(950px) rotateY(-6.5deg)  ;
+  transform-origin: left center;
+  overflow: hidden;
+  
+  /* Yellow corner borders */
+  background-image: 
+    /* Top-left corner */
+    linear-gradient(to right, #5acf16, transparent 16px),
+    linear-gradient(to bottom, #5acf16, transparent 16px),
+    /* Top-right corner */
+    linear-gradient(to left, #5acf16, transparent 16px),
+    linear-gradient(to bottom, #5acf16, transparent 16px),
+    /* Bottom-left corner */
+    linear-gradient(to right, #5acf16, transparent 16px),
+    linear-gradient(to top, #5acf16, transparent 16px),
+    /* Bottom-right corner */
+    linear-gradient(to left, #5acf16, transparent 16px),
+    linear-gradient(to top, #5acf16, transparent 16px);
+  
+  background-size: 
+    16px 3px, 3px 16px,  /* Top-left */
+    16px 3px, 3px 16px,  /* Top-right */
+    16px 3px, 3px 16px,  /* Bottom-left */
+    16px 3px, 3px 16px;  /* Bottom-right */
+  
+  background-position: 
+    0 0, 0 0,                    /* Top-left */
+    100% 0, 100% 0,              /* Top-right */
+    0 100%, 0 100%,              /* Bottom-left */
+    100% 100%, 100% 100%;        /* Bottom-right */
+  
+  background-repeat: no-repeat;
+}
+
+/* Header */
+.theme-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  
+  /* Yellow corner borders for header */
+  background-image: 
+    linear-gradient(to right, #5acf16, transparent 11px),
+    linear-gradient(to bottom, #5acf16, transparent 11px),
+    linear-gradient(to left, #5acf16, transparent 11px),
+    linear-gradient(to bottom, #5acf16, transparent 11px),
+    linear-gradient(to right, #5acf16, transparent 11px),
+    linear-gradient(to top, #5acf16, transparent 11px),
+    linear-gradient(to left, #5acf16, transparent 11px),
+    linear-gradient(to top, #5acf16, transparent 11px);
+  
+  background-size: 
+    11px 2px, 2px 11px,
+    11px 2px, 2px 11px,
+    11px 2px, 2px 11px,
+    11px 2px, 2px 11px;
+  
+  background-position: 
+    0 0, 0 0,
+    100% 0, 100% 0,
+    0 100%, 0 100%,
+    100% 100%, 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+.theme-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #5acf16;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+
+}
+
+.theme-icon {
+  color: #5acf16;
+}
+
+.theme-close-btn {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  padding: 8px;
+  cursor: pointer;
+  
+  /* Yellow corner borders for close button */
+  background-image: 
+    linear-gradient(to right, #5acf16, transparent 9px),
+    linear-gradient(to bottom, #5acf16, transparent 9px),
+    linear-gradient(to left, #5acf16, transparent 9px),
+    linear-gradient(to bottom, #5acf16, transparent 9px),
+    linear-gradient(to right, #5acf16, transparent 9px),
+    linear-gradient(to top, #5acf16, transparent 9px),
+    linear-gradient(to left, #5acf16, transparent 9px),
+    linear-gradient(to top, #5acf16, transparent 9px);
+  
+  background-size: 
+    9px 2px, 2px 9px,
+    9px 2px, 2px 9px,
+    9px 2px, 2px 9px,
+    9px 2px, 2px 9px;
+  
+  background-position: 
+    0 0, 0 0,
+    100% 0, 100% 0,
+    0 100%, 0 100%,
+    100% 100%, 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+/* Content Area */
+.theme-content {
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 15px; /* Add spacing between content and scrollbar */
+}
+
+.theme-content::-webkit-scrollbar {
+  width: 8px; /* Slightly wider scrollbar */
+}
+
+.theme-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.theme-content::-webkit-scrollbar-thumb {
+  background: #5acf16;
+  border-radius: 3px;
+}
+
+/* Color Grid */
+.color-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.color-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  
+  /* Yellow corner borders for color items */
+  background-image: 
+    linear-gradient(to right, #5acf16, transparent 11px),
+    linear-gradient(to bottom, #5acf16, transparent 11px),
+    linear-gradient(to left, #5acf16, transparent 11px),
+    linear-gradient(to bottom, #5acf16, transparent 11px),
+    linear-gradient(to right, #5acf16, transparent 11px),
+    linear-gradient(to top, #5acf16, transparent 11px),
+    linear-gradient(to left, #5acf16, transparent 11px),
+    linear-gradient(to top, #5acf16, transparent 11px);
+  
+  background-size: 
+    11px 2px, 2px 11px,
+    11px 2px, 2px 11px,
+    11px 2px, 2px 11px,
+    11px 2px, 2px 11px;
+  
+  background-position: 
+    0 0, 0 0,
+    100% 0, 100% 0,
+    0 100%, 0 100%,
+    100% 100%, 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+.color-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-weight: 500;
+}
+
+.color-icon {
+  font-size: 16px;
+}
+
+.color-name {
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 14px;
+}
+
+.color-picker-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-picker {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #ffff00;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.color-preview {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 3px solid rgba(255, 255, 0, 0.5);
+}
+
+/* Preview Section */
+.preview-section {
+  position: relative;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  
+  /* Yellow corner borders for preview section */
+  background-image: 
+    linear-gradient(to right, #5acf16, transparent 13px),
+    linear-gradient(to bottom, #5acf16, transparent 13px),
+    linear-gradient(to left, #5acf16, transparent 13px),
+    linear-gradient(to bottom, #5acf16, transparent 13px),
+    linear-gradient(to right, #5acf16, transparent 13px),
+    linear-gradient(to top, #5acf16, transparent 13px),
+    linear-gradient(to left, #5acf16, transparent 13px),
+    linear-gradient(to top, #5acf16, transparent 13px);
+  
+  background-size: 
+    13px 2px, 2px 13px,
+    13px 2px, 2px 13px,
+    13px 2px, 2px 13px,
+    13px 2px, 2px 13px;
+  
+  background-position: 
+    0 0, 0 0,
+    100% 0, 100% 0,
+    0 100%, 0 100%,
+    100% 100%, 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+.preview-title {
+  color: #5acf16;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+
+}
+
+.preview-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preview-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.preview-bar-label {
+  color: #ffffff;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 12px;
+  min-width: 60px;
+  font-weight: 500;
+}
+
+.preview-bar-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 0, 0.2);
+}
+
+.preview-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  position: relative;
+}
+
+/* Action Buttons */
+.theme-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.theme-btn {
+  position: relative;
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  /* Yellow corner borders for buttons */
+  background-image: 
+    linear-gradient(to right, #5acf16, transparent 9px),
+    linear-gradient(to bottom, #5acf16, transparent 9px),
+    linear-gradient(to left, #5acf16, transparent 9px),
+    linear-gradient(to bottom, #5acf16, transparent 9px),
+    linear-gradient(to right, #5acf16, transparent 9px),
+    linear-gradient(to top, #5acf16, transparent 9px),
+    linear-gradient(to left, #5acf16, transparent 9px),
+    linear-gradient(to top, #5acf16, transparent 9px);
+  
+  background-size: 
+    9px 2px, 2px 9px,
+    9px 2px, 2px 9px,
+    9px 2px, 2px 9px,
+    9px 2px, 2px 9px;
+  
+  background-position: 
+    0 0, 0 0,
+    100% 0, 100% 0,
+    0 100%, 0 100%,
+    100% 100%, 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+.theme-btn-primary {
+  background-color: rgba(119, 224, 57, 0.9);
+  color: #000000;
+}
+
+.theme-btn-secondary {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-height: 800px) {
+  .theme-dashboard {
+    max-height: 90vh;
+  }
+  
+  .theme-content {
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .theme-dashboard {
+    width: 90vw;
+    transform: none;
+  }
+} 

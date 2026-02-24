@@ -1,0 +1,38 @@
+.gps-distance-wrapper {
+    position: absolute;
+    bottom: 27vh;
+    left: 2vh;
+    height: auto;
+    width: fit-content;
+    z-index: 100;
+    transition: bottom 0.3s ease;
+    transform: perspective(450px) rotateY(-1.5deg) rotateZ(-2deg);
+    transform-origin: left top;
+}
+
+.gps-distance-wrapper.armor-equipped {
+    bottom: 30vh; /* Move up when armor is equipped, same as minimap adjustment */
+    transform: perspective(450px) rotateY(-1.5deg) rotateZ(-2deg);
+    transform-origin: left top;
+}
+
+.gps-distance-icon {
+    color: yellowgreen;
+    margin-right: 0.5vh;
+}
+
+.gps-distance-key-wrapper {
+    position: relative;
+    width: fit-content;
+    font-size: 1.6vh;
+    font-weight: 600;
+    padding: 0.5vh;
+    padding-inline: 1.5vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 2px black;
+    border-radius: 1vh;
+    color: white;
+    text-shadow: 0 0 2px black;
+    display: flex;
+    align-items: center;
+} 

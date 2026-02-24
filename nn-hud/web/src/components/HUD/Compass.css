@@ -1,0 +1,30 @@
+.compass-wrapper {
+    position: relative;
+    top: 2vh;
+    margin: auto;
+    height: auto;
+    width: fit-content;
+    display: flex;
+    gap: 1vh;
+}
+
+.compass-icon {
+    color: yellowgreen;
+    margin-right: 0.5vh;
+}
+
+.compass-key-wrapper {
+    position: relative;
+    width: fit-content;
+    font-size: 1.6vh;
+    font-weight: 600;
+    padding: 0.5vh;
+    padding-inline: 1.5vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 2px black;
+    border-radius: 1vh;
+    color: white;
+    text-shadow: 0 0 2px black;
+    display: flex;
+    align-items: center;
+} 

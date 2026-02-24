@@ -1,0 +1,257 @@
+.voice-system-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vh;
+  padding: 1vh;
+  min-width: 8vh;
+  position: relative;
+}
+
+/* Phone/Radio Icon Indicators */
+.voice-icon-indicator {
+  position: absolute;
+  top: -2.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5vh;
+  z-index: 10;
+  text-shadow: 0 0 2px currentColor;
+}
+
+.voice-icon-indicator.radio {
+  color: #f0cb03; /* Aqua/cyan to match voice bars */
+  text-shadow: 0 0 8px #f0cb03, 0 0 12px rgba(240, 203, 3, 0.3);
+}
+
+
+
+/* Voice Activity Indicator - Vertical bars */
+.voice-activity {
+  --bar-size: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--bar-size) / 1.5);
+  height: calc(var(--bar-size) * 8);
+}
+
+.activity-bar {
+  width: var(--bar-size);
+  height: calc(var(--bar-size) * 2);
+  background-color: #5a5959;
+  border-radius: var(--bar-size);
+  transition: all 0.3s ease-out;
+  box-shadow: 0 0 4px rgba(90, 90, 89, 0.849);
+  animation-delay: var(--animation-delay, 0s);
+  animation-duration: var(--animation-duration, 1s);
+}
+
+/* Enhanced pr-hud style animations for different speaking states */
+.activity-bar.active.talking {
+  background-color: #95bf58;
+  animation: voice-wave-talking var(--animation-duration) infinite linear;
+  box-shadow: 0 0 8px #95bf58, 0 0 12px rgba(149, 191, 88, 0.4);
+}
+
+.activity-bar.active.radio {
+  background-color: #00bcd4; /* More aqua/cyan color */
+  animation: voice-wave-radio var(--animation-duration) infinite linear;
+  box-shadow: 0 0 8px #00bcd4, 0 0 12px rgba(0, 188, 212, 0.4);
+}
+
+/* Individual bar animations with pr-hud style staggered delays */
+.activity-bar.active:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.activity-bar.active:nth-child(2) {
+  animation-delay: 0.9s;
+}
+
+.activity-bar.active:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.activity-bar.active:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+.activity-bar.active:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.activity-bar.active:nth-child(6) {
+  animation-delay: 0.8s;
+}
+
+.activity-bar.active:nth-child(7) {
+  animation-delay: 0.2s;
+}
+
+/* Enhanced voice wave animations inspired by pr-hud */
+@keyframes voice-wave-talking {
+  0% {
+    height: calc(var(--bar-size) * 2);
+    background-color: #95bf58;
+  }
+  
+  25% {
+    height: calc(var(--bar-size) * 8);
+    background-color: #a8d26d;
+  }
+  
+  50% {
+    height: calc(var(--bar-size) * 3);
+    background-color: #7ea142;
+  }
+  
+  75% {
+    height: calc(var(--bar-size) * 6);
+    background-color: #95bf58;
+  }
+  
+  100% {
+    height: calc(var(--bar-size) * 2);
+    background-color: #95bf58;
+  }
+}
+
+@keyframes voice-wave-radio {
+  0% {
+    height: calc(var(--bar-size) * 2);
+    background-color: #00bcd4; /* Aqua/cyan base */
+  }
+  
+  25% {
+    height: calc(var(--bar-size) * 8);
+    background-color: #26c6da; /* Lighter aqua */
+  }
+  
+  50% {
+    height: calc(var(--bar-size) * 3);
+    background-color: #00acc1; /* Darker aqua */
+  }
+  
+  75% {
+    height: calc(var(--bar-size) * 6);
+    background-color: #00bcd4; /* Back to base aqua */
+  }
+  
+  100% {
+    height: calc(var(--bar-size) * 2);
+    background-color: #00bcd4; /* Base aqua */
+  }
+}
+
+/* Voice Range Control - Horizontal bars */
+.voice-range {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+}
+
+.range-bar {
+  height: 4px;
+  background-color: #2e2e2e;
+  border-radius: 2px;
+  border: 0.5px solid #6b6b6b;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.range-bar.whisper,
+.range-bar.normal,
+.range-bar.shout {
+  width: 12px;
+}
+
+/* Enhanced range bar styling with better visual feedback */
+.voice-range .range-bar.whisper.active {
+  background-color: #FFD700 !important;
+  border: 0.5px solid #c0c0c0 !important;
+  box-shadow: 0 0 8px #FFD700, 0 0 12px rgba(255, 215, 0, 0.3) !important;
+  animation: range-pulse 2s ease-in-out infinite !important;
+}
+
+.voice-range .range-bar.normal.active {
+  background-color: #FFD700 !important;
+  border: 0.5px solid #c0c0c0 !important;
+  box-shadow: 0 0 8px #FFD700, 0 0 12px rgba(255, 215, 0, 0.3) !important;
+  animation: range-pulse 2s ease-in-out infinite !important;
+}
+
+.voice-range .range-bar.shout.active {
+  background-color: #FFD700 !important;
+  border: 0.5px solid #c0c0c0 !important;
+  box-shadow: 0 0 8px #FFD700, 0 0 12px rgba(255, 215, 0, 0.3) !important;
+  animation: range-pulse 2s ease-in-out infinite !important;
+}
+
+@keyframes range-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleY(1.2);
+  }
+}
+
+/* Enhanced responsiveness and visual polish */
+.voice-system-container:hover .activity-bar {
+  transform: scaleY(1.05);
+  transition: transform 0.2s ease;
+}
+
+.voice-system-container:hover .range-bar.active {
+  box-shadow: 0 0 12px #FFD700, 0 0 16px rgba(255, 215, 0, 0.4);
+}
+
+/* Smooth transitions for state changes */
+.activity-bar:not(.active) {
+  opacity: 0.6;
+}
+
+.activity-bar.active {
+  opacity: 1;
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 1366px) {
+  .voice-system-container {
+    min-width: 7vh;
+    padding: 0.8vh;
+  }
+  
+  .voice-icon-indicator {
+    font-size: 2vh;
+    top: -3.5vh;
+  }
+  
+  .voice-activity {
+    --bar-size: 3.5px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .voice-system-container {
+    min-width: 6vh;
+    padding: 0.6vh;
+  }
+  
+  .voice-icon-indicator {
+    font-size: 1.8vh;
+    top: -3vh;
+  }
+  
+  .voice-activity {
+    --bar-size: 3px;
+  }
+  
+  .range-bar {
+    width: 10px;
+  }
+} 
